@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://caufint7mko7p"]
+
+[ext_resource type="PackedScene" uid="uid://c4yy0dl2nudnu" path="res://gui.tscn" id="1_b6hsa"]
+[ext_resource type="Script" path="res://camera.gd" id="1_ngodq"]
+[ext_resource type="Resource" uid="uid://dg02yygj5f3ng" path="res://Game assets/inventory_res.tres" id="2_1301q"]
+
+[node name="camera" type="Node2D"]
+script = ExtResource("1_ngodq")
+inv = ExtResource("2_1301q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("1_b6hsa")]
+
+[connection signal="create_item" from="CanvasLayer/Control" to="." method="_on_control_create_item"]

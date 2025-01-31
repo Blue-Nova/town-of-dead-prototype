@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ITEM" load_steps=3 format=3 uid="uid://b2kq4ypcd3k8n"]
+
+[ext_resource type="Texture2D" uid="uid://b3v1x7ct4jkvg" path="res://Game assets/Item_rock.png" id="1_is5jy"]
+[ext_resource type="Script" path="res://item_class.gd" id="2_m7t1e"]
+
+[resource]
+script = ExtResource("2_m7t1e")
+id = "stone"
+ITEM_NAME = "Stone"
+TEXTURE = ExtResource("1_is5jy")
+COUNT = 0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcwhfjldplcw4"]
+
+[ext_resource type="Script" path="res://inventory_panel.gd" id="1_583ti"]
+[ext_resource type="Texture2D" uid="uid://b5s0fvubfche6" path="res://icon.svg" id="1_owdnl"]
+
+[node name="inventory panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(85, 85)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1067.0
+offset_bottom = -563.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_583ti")
+
+[node name="item_sprite" type="Sprite2D" parent="."]
+position = Vector2(10, 10)
+scale = Vector2(0.507812, 0.507812)
+texture = ExtResource("1_owdnl")
+centered = false

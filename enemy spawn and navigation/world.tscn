@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bywlr17e3syv5"]
+
+[ext_resource type="PackedScene" uid="uid://bbcf8aum6si0o" path="res://enemy.tscn" id="1_va31c"]
+[ext_resource type="PackedScene" uid="uid://d038fnrfiqnyj" path="res://player.tscn" id="2_k0e2b"]
+[ext_resource type="PackedScene" uid="uid://dca41po5ohqx5" path="res://wall.tscn" id="3_addhk"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_5pmgh"]
+vertices = PackedVector2Array(615, 399, 1123, 639, 16, 634, 571, 399, 521, 398, 477, 398, 7, 1, 207, 55, 477, 240, 1114, 43, 521, 240, 615, 241, 571, 241)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(5, 2, 6, 7, 8), PackedInt32Array(8, 7, 9, 10), PackedInt32Array(9, 1, 0, 11), PackedInt32Array(10, 9, 11, 12), PackedInt32Array(12, 3, 4, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(208, 45, 1124, 33, 1134, 650, 7, 644, -3, -12)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_va31c")]
+position = Vector2(642, 237)
+collision_layer = 3
+speed = 40
+target = NodePath("../player")
+
+[node name="player" parent="." instance=ExtResource("2_k0e2b")]
+position = Vector2(424.015, 375)
+movement_speed = 80.0
+accel = 20
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(6, -10)
+navigation_polygon = SubResource("NavigationPolygon_5pmgh")
+navigation_layers = 3
+
+[node name="Node2D" parent="NavigationRegion2D" instance=ExtResource("3_addhk")]
+position = Vector2(593, 320)
+
+[node name="Node2D2" parent="NavigationRegion2D" instance=ExtResource("3_addhk")]
+position = Vector2(499, 319)

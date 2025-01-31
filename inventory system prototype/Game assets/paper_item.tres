@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ITEM" load_steps=3 format=3 uid="uid://d3v807stql3xi"]
+
+[ext_resource type="Texture2D" uid="uid://ds2xkntwxf63k" path="res://Game assets/Untitled_Artwork 3.png" id="1_crqg5"]
+[ext_resource type="Script" path="res://item_class.gd" id="2_wvw5x"]
+
+[resource]
+script = ExtResource("2_wvw5x")
+id = "paper"
+ITEM_NAME = "Piece of Paper"
+TEXTURE = ExtResource("1_crqg5")
+COUNT = 0
